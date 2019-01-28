@@ -617,9 +617,9 @@
                                                  background-position: center;
                                                  height: 650px">
 
-                    <video class="hidden-xs"  autoplay loop poster="" id="bgVideo">
+                    <!-- <video class="hidden-xs"  autoplay loop poster="" id="bgVideo">
                         <source src="video/presentation.mp4" type="video/mp4">
-                    </video>
+                    </video> -->
                         
                     </div>
                 </div>
@@ -686,7 +686,7 @@
                 <div class="half-column-wrapp" style="background-color: #fff">
                     <div class="half-column column-content" style="background-color: #fff">
                         <p style="text-transform: uppercase; display: inline-block;color: #222;font-weight: bolder;font-size: 50px">DEVIENS</p>
-                        <span class="crochet">[</span><p class="fadeInUp animated module-list" style="text-transform: uppercase; display: inline-block;color: #222;font-weight: bolder;font-size: 50px" id="module-list">FULLSTACK</p>
+                        <span class="crochet">[</span><p data-aos="fade-top" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="400" data-aos-delay="50" class="fadeInUp animated module-list" style="text-transform: uppercase; display: inline-block;color: #222;font-weight: bolder;font-size: 50px" id="module-list">FULLSTACK</p>
                         <span  class="crochet">]</span>
                         <p>
                         <p style="color:#555; font-size: 25px">
@@ -948,7 +948,7 @@
                                     </div>
                                     <div class="caption">
                                         <h5 class="text-dark">Yves MOUSOUBA</h5>
-                                        <span class="team-position">Developer</span>
+                                        <span class="team-position">Futur Boss</span>
                                     </div>
                                 </div>
                             </div>
@@ -962,11 +962,11 @@
                                                 <a href="#"><i class="fa fa-linkedin"></i></a>
                                             </div>
                                         </div>
-                                        <img src="img/team/img01.jpg" class="img-responsive" alt="" />
+                                        <img src="img/team/img02.jpg" class="img-responsive" alt="" />
                                     </div>
                                     <div class="caption">
-                                        <h5 class="text-dark">Yves MOUSOUBA</h5>
-                                        <span class="team-position">Developer</span>
+                                        <h5 class="text-dark">SANDE Franck</h5>
+                                        <span class="team-position">Chef de Groupe</span>
                                     </div>
                                 </div>
                             </div>
@@ -980,11 +980,11 @@
                                                 <a href="#"><i class="fa fa-linkedin"></i></a>
                                             </div>
                                         </div>
-                                        <img src="img/team/img01.jpg" class="img-responsive" alt="" />
+                                        <img src="img/team/img03.jpg" class="img-responsive" alt="" />
                                     </div>
                                     <div class="caption">
-                                        <h5 class="text-dark">Yves MOUSOUBA</h5>
-                                        <span class="team-position">Developer</span>
+                                        <h5 class="text-dark">DOUMBIA Abou</h5>
+                                        <span class="team-position">JAVA DEV</span>
                                     </div>
                                 </div>
                             </div>
@@ -998,11 +998,11 @@
                                                 <a href="#"><i class="fa fa-linkedin"></i></a>
                                             </div>
                                         </div>
-                                        <img src="img/team/img01.jpg" class="img-responsive" alt="" />
+                                        <img src="img/team/img04.jpg" class="img-responsive" alt="" />
                                     </div>
                                     <div class="caption">
-                                        <h5 class="text-dark">Yves MOUSOUBA</h5>
-                                        <span class="team-position">Developer</span>
+                                        <h5 class="text-dark">KEFFADI DIOMANDE</h5>
+                                        <span class="team-position">Directeur Général</span>
                                     </div>
                                 </div>
                             </div>
@@ -1020,13 +1020,16 @@
                                     </div>
                                     <div class="caption">
                                         <h5 class="text-dark">Yves MOUSOUBA</h5>
-                                        <span class="team-position">Developer</span>
+                                        <span class="team-position">Entrepreneur</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
+
 
                 <!-- Nos partenaires -->
 
@@ -1085,7 +1088,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12 text-center">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                                    <p>More then 100 premium html 5 template in one download package</p>
                                     <a style="border-radius: 50px;" class="btn-e btn-e-primary btn-lg" href="#">Devenir un partenaire</a>
                                 </div>
                             </div>
@@ -1098,7 +1101,9 @@
         
         <div class="container-fluid">
             <div class="row">
-                
+                <div class="col-md-3">
+                    
+                </div>
             </div>
         </div>
 
@@ -1331,25 +1336,26 @@
         </script>
 
         <script type="text/javascript">
-            var datalist = ["WebDev", "IA","BIG DATA"];
-            
+            var datalist = ["web dev", "ionic dev","react dev","angular dev","nodejs dev","php dev","python dev","java dev"];
+            var l = datalist.length - 1;
+            var x = document.getElementById('module-list');
             var i = 0;
-            function(){
-                function slide(){
-                var x = document.getElementById('module-list');
-                if(i < datalist.length){
+            function reload(){
+                console.log(l);
+                setTimeout(function(){
                     x.innerHTML = datalist[i];
-                    i++;
-                }else{
-                    i = 0;
-                    break;
-                }
+                    console.log('l ='+i);
+                    console.log('data ='+datalist[i]);
+                    if(i == l){
+                        i=0;
+                    }else{
+                      i++;  
+                    }
+                    reload();
+                },4000);
+                
             }
-            };
-
-            setTimeout(function(){
-                slide();
-            },1000);
+            reload();
         </script>
 
 
